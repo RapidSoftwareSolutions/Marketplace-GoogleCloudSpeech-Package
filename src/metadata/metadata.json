@@ -1,0 +1,205 @@
+{
+  "package": "GoogleCloudSpeech",
+  "tagline": "GoogleCloudSpeech API",
+  "description": "Convert audio to text with neural network models.",
+  "image": "https://cloud.google.com/images/products/speech/speech-api-lead.png",
+  "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-GoogleCloudSpeech-Package",
+  "keywords": [
+    "API",
+    "audio",
+    "speech",
+    "text",
+    "transcribe",
+    "transcription",
+    "voice"
+  ],
+  "accounts": {
+    "domain": "https://cloud.google.com/speech/",
+    "credentials": [
+      "apiKey",
+      "apiSecret"
+    ]
+  },
+  "blocks": [
+    {
+      "name": "getAccessToken",
+      "description": "Get OAuth access token",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key from Google Console",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api secret from Google Console",
+          "required": true
+        },
+        {
+          "name": "code",
+          "type": "String",
+          "info": "Code provided by client",
+          "required": true
+        },
+        {
+          "name": "redirectUrl",
+          "type": "String",
+          "info": "Redirect URL (your app url)",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSpeechRecognition",
+      "description": "Get speech recognition",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key from Google Console",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api secret from Google Console",
+          "required": true
+        },
+        {
+          "name": "file",
+          "type": "File",
+          "info": "Audio file to recognition",
+          "required": true
+        },
+        {
+          "name": "encoding",
+          "type": "String",
+          "info": "Encoding type: LINEAR16, FLAC, MULAW, AMR, AMR_WB",
+          "required": true
+        },
+        {
+          "name": "rate",
+          "type": "Number",
+          "info": "Sample rate in Hertz of the audio data sent. Valid values are: 8000-48000",
+          "required": true
+        },
+        {
+          "name": "languageCode",
+          "type": "String",
+          "info": "The language of the supplied audio as a BCP-47 language tag. Example: 'en-GB'",
+          "required": false
+        },
+        {
+          "name": "maxAlternatives",
+          "type": "Number",
+          "info": "Maximum number of recognition hypotheses to be returned. Valid values are 0-30. A value of 0 or 1 will return a maximum of 1. If omitted, defaults to 1.",
+          "required": false
+        },
+        {
+          "name": "profanityFilter",
+          "type": "Boolean",
+          "info": "If set to true, the server will attempt to filter out profanities, replacing all but the initial character in each filtered word with asterisks, e.g. 'f***'. If set to false or omitted, profanities won't be filtered out.",
+          "required": false
+        },
+        {
+          "name": "phrases",
+          "type": "Array",
+          "info": "Comma-separated phrases. A means to provide context to assist the speech recognition.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSpeechRecognitionFromURL",
+      "description": "Get speech recognition from URL",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key from Google Console",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api secret from Google Console",
+          "required": true
+        },
+        {
+          "name": "file",
+          "type": "String",
+          "info": "URL to Audio file to recognition",
+          "required": true
+        },
+        {
+          "name": "encoding",
+          "type": "String",
+          "info": "Encoding type: LINEAR16, FLAC, MULAW, AMR, AMR_WB",
+          "required": true
+        },
+        {
+          "name": "rate",
+          "type": "Number",
+          "info": "Sample rate in Hertz of the audio data sent. Valid values are: 8000-48000",
+          "required": true
+        },
+        {
+          "name": "languageCode",
+          "type": "String",
+          "info": "The language of the supplied audio as a BCP-47 language tag. Example: 'en-GB'",
+          "required": false
+        },
+        {
+          "name": "maxAlternatives",
+          "type": "Number",
+          "info": "Maximum number of recognition hypotheses to be returned. Valid values are 0-30. A value of 0 or 1 will return a maximum of 1. If omitted, defaults to 1.",
+          "required": false
+        },
+        {
+          "name": "profanityFilter",
+          "type": "Boolean",
+          "info": "If set to true, the server will attempt to filter out profanities, replacing all but the initial character in each filtered word with asterisks, e.g. 'f***'. If set to false or omitted, profanities won't be filtered out.",
+          "required": false
+        },
+        {
+          "name": "phrases",
+          "type": "Array",
+          "info": "Comma-separated phrases. A means to provide context to assist the speech recognition.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }
+  ]
+}
