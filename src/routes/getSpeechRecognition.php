@@ -34,17 +34,17 @@ $app->post('/api/GoogleCloudSpeech/getSpeechRecognition', function ($request, $r
     if (!empty($postData['args']['languageCode'])) {
         $json['config']['languageCode'] = $postData['args']['languageCode'];
     }
-    if (isset($postData['args']['maxAlternatives']) && strlen($postData['args']['maxAlternatives']) > 0) {
-        $json['maxAlternatives'] = $postData['args']['maxAlternatives'];
+    if (!empty($postData['args']['maxAlternatives'])) {
+        $json['config']['maxAlternatives'] = $postData['args']['maxAlternatives'];
     }
     if (isset($postData['args']['profanityFilter']) && strlen($postData['args']['profanityFilter']) > 0) {
-        $json['profanityFilter'] = filter_var($postData['args']['profanityFilter'], FILTER_VALIDATE_BOOLEAN);
+        $json['config']['profanityFilter'] = filter_var($postData['args']['profanityFilter'], FILTER_VALIDATE_BOOLEAN);
     }
     if (isset($postData['args']['phrases'])) {
         if (is_array($postData['args']['phrases']) && !empty($postData['args']['phrases'])) {
-            $json['speechContext']['phrases'] = $postData['args']['phrases'];
+            $json['config']['speechContext']['phrases'] = $postData['args']['phrases'];
         } elseif (strlen(trim($postData['args']['phrases'])) > 0) {
-            $json['speechContext']['phrases'] = explode(',', $postData['args']['phrases']);
+            $json['config']['speechContext']['phrases'] = explode(',', $postData['args']['phrases']);
         }
     }
 
