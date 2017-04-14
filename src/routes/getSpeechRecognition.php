@@ -28,7 +28,7 @@ $app->post('/api/GoogleCloudSpeech/getSpeechRecognition', function ($request, $r
     ];
     $json['config'] = [
         'encoding' => $postData['args']['encoding'],
-        'sampleRate' => $postData['args']['rate']
+        'sampleRate' => (int) $postData['args']['rate']
     ];
 
     if (!empty($postData['args']['languageCode'])) {
