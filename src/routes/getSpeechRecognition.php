@@ -40,10 +40,10 @@ $app->post('/api/GoogleCloudSpeech/getSpeechRecognition', function ($request, $r
     if (isset($postData['args']['profanityFilter']) && strlen($postData['args']['profanityFilter']) > 0) {
         $json['profanityFilter'] = filter_var($postData['args']['profanityFilter'], FILTER_VALIDATE_BOOLEAN);
     }
-    if (!isset($postData['args']['phrases'])) {
-        if (is_array($postData['args']['phrases'])) {
+    if (isset($postData['args']['phrases'])) {
+        if (is_array($postData['args']['phrases']) && !empty($postData['args']['phrases'])) {
             $json['speechContext']['phrases'] = $postData['args']['phrases'];
-        } else {
+        } elseif (strlen(trim($postData['args']['phrases'])) > 0) {
             $json['speechContext']['phrases'] = explode(',', $postData['args']['phrases']);
         }
     }
