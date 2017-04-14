@@ -1,6 +1,6 @@
 <?php
 
-$app->post('/api/GoogleCloudSpeech/getSpeechRecognition', function ($request, $response) {
+$app->post('/api/GoogleCloudSpeech/getSpeechRecognitionFromURL', function ($request, $response) {
     /** @var \Slim\Http\Response $response */
     /** @var \Slim\Http\Request $request */
     /** @var \Models\checkRequest $checkRequest */
