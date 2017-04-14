@@ -23,8 +23,7 @@ Get speech recognition
 
 | Field          | Type       | Description
 |----------------|------------|----------
-| apiKey         | credentials| Api key from Google Console
-| apiSecret      | credentials| Api secret from Google Console
+| accessToken    | String     | Access token from getAccessToken method
 | file           | File       | Audio file to recognition
 | encoding       | String     | Encoding type: LINEAR16, FLAC, MULAW, AMR, AMR_WB
 | rate           | Number     | Sample rate in Hertz of the audio data sent. Valid values are: 8000-48000
@@ -38,8 +37,7 @@ Get speech recognition from URL
 
 | Field          | Type       | Description
 |----------------|------------|----------
-| apiKey         | credentials| Api key from Google Console
-| apiSecret      | credentials| Api secret from Google Console
+| accessToken    | String     | Access token from getAccessToken method
 | file           | String     | URL to Audio file to recognition
 | encoding       | String     | Encoding type: LINEAR16, FLAC, MULAW, AMR, AMR_WB
 | rate           | Number     | Sample rate in Hertz of the audio data sent. Valid values are: 8000-48000
