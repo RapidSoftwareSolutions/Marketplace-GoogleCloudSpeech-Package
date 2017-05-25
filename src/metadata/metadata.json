@@ -79,7 +79,8 @@
         },
         {
           "name": "encoding",
-          "type": "String",
+          "type": "Select",
+          "options": ["LINEAR16", "FLAC", "MULAW", "AMR", "AMR_WB"],
           "info": "Encoding type: LINEAR16, FLAC, MULAW, AMR, AMR_WB",
           "required": true
         },
@@ -109,9 +110,14 @@
         },
         {
           "name": "phrases",
-          "type": "Array",
-          "info": "Comma-separated phrases. A means to provide context to assist the speech recognition.",
-          "required": false
+          "type": "List",
+          "info": "List of strings. A means to provide context to assist the speech recognition.",
+          "required": false,
+          "structure": {
+            "name": "phrase",
+            "type": "String",
+            "info": "A means to provide context to assist the speech recognition."
+          }
         }
       ],
       "callbacks": [
@@ -143,7 +149,8 @@
         },
         {
           "name": "encoding",
-          "type": "String",
+          "type": "Select",
+          "options": ["LINEAR16", "FLAC", "MULAW", "AMR", "AMR_WB"],
           "info": "Encoding type: LINEAR16, FLAC, MULAW, AMR, AMR_WB",
           "required": true
         },
@@ -173,9 +180,14 @@
         },
         {
           "name": "phrases",
-          "type": "Array",
-          "info": "Comma-separated phrases. A means to provide context to assist the speech recognition.",
-          "required": false
+          "type": "List",
+          "info": "List of string. A means to provide context to assist the speech recognition.",
+          "required": false,
+          "structure": {
+            "name": "phrase",
+            "type": "String",
+            "info": "A means to provide context to assist the speech recognition."
+          }
         }
       ],
       "callbacks": [
