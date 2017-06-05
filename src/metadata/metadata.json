@@ -116,7 +116,8 @@
           "structure": {
             "name": "phrase",
             "type": "String",
-            "info": "A means to provide context to assist the speech recognition."
+            "info": "A means to provide context to assist the speech recognition.",
+            "required": false
           }
         }
       ],
@@ -186,7 +187,8 @@
           "structure": {
             "name": "phrase",
             "type": "String",
-            "info": "A means to provide context to assist the speech recognition."
+            "info": "A means to provide context to assist the speech recognition.",
+            "required": false
           }
         }
       ],
